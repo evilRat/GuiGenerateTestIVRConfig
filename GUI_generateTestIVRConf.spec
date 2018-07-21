@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['GUI_generateTestIVRConf.py'],
-             pathex=['D:\\workspace\\python\\script'],
+             pathex=['F:\\workspace\\python\\GUI'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -26,4 +26,4 @@ exe = EXE(pyz,
           strip=False,
           upx=True,
           runtime_tmpdir=None,
-          console=False , icon='config.ico')
+          console=True , icon='config.ico')
