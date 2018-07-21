@@ -1,2 +1,2 @@
 # GuiGenerateTestIVRConfig
-项目组需要配置TestIVR的配置文件，每次都很麻烦，用python写了一个gui的工具，可以提高工作效率
+每次联调接口需要配置TestIVR的配置文件，每次都很麻烦，像这次联调200+个接口，简直要疯，用python写了一个gui的工具，可以提高工作效率
