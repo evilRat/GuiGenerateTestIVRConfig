@@ -1,0 +1,2 @@
+# GuiGenerateTestIVRConfig
+项目组需要配置TestIVR的配置文件，每次都很麻烦，用python写了一个gui的工具，可以提高工作效率
