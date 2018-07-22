@@ -83,7 +83,7 @@ class Gui(object):
     def dogenerate(self, configList, paramList):
         string = '[DtProxy]\nTestIVRID = ' + configList[0] + '\nDtProxyIP = ' + configList[1] + '\nDtProxyID = ' + \
                  configList[2] + '\nLogSize = 2\nAppSvr = 0\nDataSource = ' + configList[3] + '\nByteOrder = 0\n\n'
-        string += '[SP_CALL1]\nSPName = I_SCE_CommonInterFace\nTimeout = 6000\n\n'
+        string += '[SP_CALL1]\nSPName = I_SCE_CommonInterFace\nTimeout = 6000\n\n'+'ParaNum = '+str(len(paramList)-1+int(paramList[-1][1]))+'\n\n'
 
         for i in range(0, len(paramList)):
             if paramList[i][0] != 'outParamNum':
@@ -91,6 +91,8 @@ class Gui(object):
                 string += 'ParaType' + str(i + 1) + ' = 0\n'
                 string += 'DataLen' + str(i + 1) + ' = 50\n'
                 if ':' in paramList[i][1]:
+                    string += 'Data' + str(i + 1) + ' = ' + paramList[i][1] + '\n\n'
+                elif 'Url' == paramList[i][0]:
                     string += 'Data' + str(i + 1) + ' = ' + paramList[i][1] + '\n\n'
                 else:
                     string += 'Data' + str(i + 1) + ' = ' + paramList[i][0]+':'+paramList[i][1] + '\n\n'
