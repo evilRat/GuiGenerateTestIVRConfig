@@ -156,7 +156,7 @@ class Gui(object):
                         self.label_text_field4, self.val_field4], [self.label_text_field5, self.val_field5], [
                         self.label_text_field6, self.val_field6], [self.label_text_field7, self.val_field7], [
                         self.label_text_field8, self.val_field8], [self.label_text_outParamNum, self.val_outParamNum]
-        configList = [self.val_testivrid,self.val_dtproxyip,self.val_dtproxyid,self.label_text_datasource]
+        configList = [self.val_testivrid,self.val_dtproxyip,self.val_dtproxyid,self.val_datasource]
         print(configList)
         print(paramList)
         print(self.cleanparam(paramList))
@@ -176,7 +176,7 @@ class Gui(object):
         self.root.field8_entry.delete(0, tk.END)
 
     def gethelpinfo(self):
-        string = '默认配置为测试环境，所有配置都可以手动修改。填写好所有的参数之后，点击generate可直接生成testIVR.ini配置文件的内容，如果需要测试下一个接口，点击reset可直接清空参数配置'
+        string = '默认配置为测试环境，所有配置都可以手动修改。填写好所有的参数之后，点击generate可直接生成testIVR.ini配置文件的内容，如果需要测试下一个接口，点击reset可直接清空参数配置。所有的参数配置都可以自定义key，比如第一个参数的key不是url而是otherkey,那么就配置为otherkey:xxxx，只要所有的参数顺序对生成的配置文件就对。如果没有Field1这个参数而且有Field2这个参数，就有两种配置方式：1.空着Field1，直接配置Field2；2.在Field1处填写Field2:xxxx'
         self.root.outPut_text.delete(1.0, tk.END)
         self.root.outPut_text.insert(1.0, string)
 
